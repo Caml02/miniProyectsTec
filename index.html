@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProyects</title>
+    <link rel="stylesheet" href="public/build/css/app.css">
+
+</head>
+<body>
+    <header class="header inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="/">
+                    <img src="build/img/logo.svg" alt="logo">
+                </a>
+
+                <div class="mobile-menu">
+                    <img src="src/img/barras.svg" alt="icono menu responsive">
+                </div>
+
+                <div class="right-way">
+                    <img class="dark-mode-boton" src="src/img/dark-mode.svg">
+                    <nav class="navegacion">
+                        <a href="javascriptP.html">JavaScript</a>
+                        <a href="pythonP.html">Python</a>
+                        <a href="finalProyect.html">JS&PY</a>
+                    </nav>
+                </div>
+                
+            </div>
+            <H1>
+                JavaScript & Python - MiniProyectos 
+            </H1>
+        </div>
+    </header>
+
+    <section class="seccion contenedor">
+        <h2>Proyectos JavaScript</h2>
+
+        <div class="contenedor-proyectos">
+            <div class="proyecto">
+                <div class="js-icons">
+                    <img loading="lazy" src="src/img/incoms.svg" alt="Incoms-icon">
+                </div>
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Suma de Ingresos</p>
+                    <button class="boton-amarillo-block" onclick="toggleIncoms()">
+                        Ver Proyecto
+                      </button>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+            <div class="proyecto">
+                <div class="js-icons">
+                    <img loading="lazy" src="src/img/infinite.svg" alt="Infinite-icon">
+                </div>
+
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Scroll Infinito</p>
+                    <button class="boton-amarillo-block" onclick="toggleScroll()">
+                        Ver Proyecto
+                      </button>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                  <p class="lenguage-type">Cuenta regresiva</p>
+                  <button class="boton-amarillo-block" onclick="toggleCountDown(), toggleMiniproyect()">
+                    Ver Proyecto
+                  </button>
+                </div><!--.contenido-proyecto--->
+              </div><!--proyecto-->
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Traductor</p>
+                    <button class="boton-amarillo-block" onclick="toggleTranslate()">
+                        Ver Proyecto
+                      </button>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Juego BreackOut</p>
+                    <button class="boton-amarillo-block" onclick="toggleCountBreakOut(), toggleMiniproyect()">
+                        Ver Proyecto
+                      </button>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+        </div>
+
+        <div class="miniproyect-container">
+            <div id="countDown" style="display: none;">
+                <h3>Cuenta regresiva para el año nuevo:</h3>
+                <div id="count-time"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="seccion contenedor">
+        <h2>Proyectos Python</h2>
+
+        <div class="contenedor-proyectos">
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Suma de Ingresos</p>
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Proyecto
+                    </a>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Scroll Infinito</p>
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Proyecto
+                    </a>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Cuenta regresiva</p>
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Proyecto
+                    </a>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Traductor</p>
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Proyecto
+                    </a>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+
+
+            <div class="proyecto">
+                <div class="contenido-proyecto">
+                    <p class="lenguage-type">Juego BreackOut</p>
+                    <a href="anuncio.html" class="boton-amarillo-block">
+                        Ver Proyecto
+                    </a>
+                </div><!--.contenido-proyecto--->
+            </div><!--proyecto-->
+        </div>
+    </section>
+
+
+    <script src="public/build/js/app.js"></script>
+    <script src="public/build/js/proyectsjs/countdown.js"></script>
+
+
+</body>
+</html>
