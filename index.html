@@ -38,127 +38,133 @@
 
     <section class="seccion contenedor">
         <h2>Proyectos JavaScript</h2>
-
+      
         <div class="contenedor-proyectos">
-            <div class="proyecto">
-                <div class="js-icons">
-                    <img loading="lazy" src="src/img/incoms.svg" alt="Incoms-icon">
-                </div>
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Suma de Ingresos</p>
-                    <button class="boton-amarillo-block" onclick="toggleIncoms()">
-                        Ver Proyecto
-                      </button>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-            <div class="proyecto">
-                <div class="js-icons">
-                    <img loading="lazy" src="src/img/infinite.svg" alt="Infinite-icon">
-                </div>
-
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Scroll Infinito</p>
-                    <button class="boton-amarillo-block" onclick="toggleScroll()">
-                        Ver Proyecto
-                      </button>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                  <p class="lenguage-type">Cuenta regresiva</p>
-                  <button class="boton-amarillo-block" onclick="toggleCountDown(), toggleMiniproyect()">
-                    Ver Proyecto
-                  </button>
-                </div><!--.contenido-proyecto--->
-              </div><!--proyecto-->
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Traductor</p>
-                    <button class="boton-amarillo-block" onclick="toggleTranslate()">
-                        Ver Proyecto
-                      </button>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Juego BreackOut</p>
-                    <button class="boton-amarillo-block" onclick="toggleCountBreakOut(), toggleMiniproyect()">
-                        Ver Proyecto
-                      </button>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-        </div>
-
-        <div class="miniproyect-container">
-            <div id="countDown" style="display: none;">
-                <h3>Cuenta regresiva para el año nuevo:</h3>
-                <div id="count-time"></div>
+          <div class="proyecto">
+            <div class="js-icons">
+              <img loading="lazy" src="src/img/incoms.svg" alt="Incoms-icon">
             </div>
+            <div class="contenido-proyecto">
+              <p class="lenguage-type">Suma de Ingresos</p>
+              <button class="boton-amarillo-block" onclick="toggleProject('incoms'); changeProject('incoms');">
+                Ver Proyecto
+              </button>              
+            </div><!--.contenido-proyecto--->
+          </div><!--proyecto-->
+      
+          <div class="proyecto">
+            <div class="contenido-proyecto">
+              <p class="lenguage-type">Cuenta regresiva</p>
+              <button class="boton-amarillo-block" onclick="toggleProject('countDown'); changeProject('countDown');">
+                Ver Proyecto
+              </button>
+            </div><!--.contenido-proyecto--->
+          </div><!--proyecto-->
+      
+          <div class="proyecto">
+            <div class="contenido-proyecto">
+              <p class="lenguage-type">Scroll Infinito</p>
+              <button class="boton-amarillo-block" onclick="toggleProject('infiniteScroll') ; changeProject('infiniteScroll');">
+                Ver Proyecto
+              </button>
+            </div><!--.contenido-proyecto--->
+          </div><!--proyecto-->
+      
+          <div class="proyecto">
+            <div class="contenido-proyecto">
+              <p class="lenguage-type">Traductor</p>
+              <button class="boton-amarillo-block" onclick="toggleProject('speechToText'); changeProject('speechToText');">
+                Ver Proyecto
+              </button>
+            </div><!--.contenido-proyecto--->
+          </div><!--proyecto-->
+      
+          <div class="proyecto">
+            <div class="contenido-proyecto">
+              <p class="lenguage-type">Juego BreackOut</p>
+              <button class="boton-amarillo-block" onclick="toggleProject('breakOut'); changeProject('breakOut');">
+                Ver Proyecto
+              </button>
+            </div><!--.contenido-proyecto--->
+          </div><!--proyecto-->
         </div>
-    </section>
+      
+        <div id="miniproyects" class="miniproyects-container hidden">
+            <div id="incoms" class="project-content">
+                <h3>Suma de Ingresos:</h3>
+                <form id="incomeForm">
+                  <label for="incomeAmount">Monto de ingreso:</label>
+                  <input type="number" id="incomeAmount" required>
+              
+                  <label for="incomeDescription">Descripción del ingreso:</label>
+                  <input type="text" id="incomeDescription" required>
+              
+                  <button type="submit">Agregar ingreso</button>
+                </form>
+              
+                <div id="incomeList">
+                  <!-- Aquí se mostrará la lista de ingresos agregados -->
+                </div>
+              
+                <div id="totalIncome">
+                  Total de ingresos: <span id="incomeTotalAmount">0</span>
+                </div>
+              </div> <!--Termina Incoms Display-->
+              
+          <div id="countDown" class="project-content">
+            <h3>Cuenta regresiva para el año nuevo:</h3>
+            <div id="count-time"></div>
+          </div> <!--Termina CountDown Display-->
+
+          <div id="speechToText" class="project-content">
+            <h3>Audio a Número:</h3>
+            <button id="startButton" class="boton-amarillo-block">Iniciar</button>
+            <button id="stopButton" class="boton-amarillo-block">Detener</button>
+            <p id="transcription"></p>
+            <button id="clearButton">Borrar Transcripción</button>
+          </div>
+                    
+          <div id="infiniteScroll" class="project-content">
+            <h3>Scroll Infinito:</h3>
+            <div id="infiniteScrollContainer"></div>
+          </div>  <!--Termina IntiniteScroll Display-->
+          
+          <div id="breakOut" class="project-content">
+            <button class="boton-amarillo-block" onclick="startBreakoutGame('breakoutCanvas')">Iniciar Juego</button>
+            <div id="miniproyectsCanva">
+                <canvas id="breakoutCanvas"></canvas>
+            </div>
+          </div> <!--Termina BreackOut Display-->
+
+        </div>
+    </section> <!-- Termina Seccion miniproyectos -->
+      
 
 
     <section class="seccion contenedor">
         <h2>Proyectos Python</h2>
 
-        <div class="contenedor-proyectos">
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Suma de Ingresos</p>
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Proyecto
-                    </a>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
 
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Scroll Infinito</p>
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Proyecto
-                    </a>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Cuenta regresiva</p>
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Proyecto
-                    </a>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Traductor</p>
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Proyecto
-                    </a>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
-
-
-            <div class="proyecto">
-                <div class="contenido-proyecto">
-                    <p class="lenguage-type">Juego BreackOut</p>
-                    <a href="anuncio.html" class="boton-amarillo-block">
-                        Ver Proyecto
-                    </a>
-                </div><!--.contenido-proyecto--->
-            </div><!--proyecto-->
+    <footer class="footer-expand-lg bg-body-tertiary">
+        <div class="container-fluid text-center py-3">
+          <div class="row">
+              <p>2023 © Todos los derechos reservados a Cristian Morales | 
+              <a href="https://github.com/caml02/" target="_blank"><i class="fa-brands fa-github fa-xs"></i> </a>
+              <a href="https://www.linkedin.com/in/cristian-morales-87311b18a/" target="_blank"><i class="fa-brands fa-linkedin fa-xs"></i></a>        
+              </p> 
+          </div>
         </div>
-    </section>
+      </footer>
 
 
     <script src="public/build/js/app.js"></script>
     <script src="public/build/js/proyectsjs/countdown.js"></script>
+    <script src="public/build/js/proyectsjs/infiniteScroll.js"></script>
+    <script src="public/build/js/proyectsjs/incoms.js"></script>
+    <script src="public/build/js/proyectsjs/translate.js"></script>
+    <script src="public/build/js/proyectsjs/breackOut.js"></script>
+
+
 
 
 </body>

@@ -1,8 +1,32 @@
-.miniproyectos-container {
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.miniproyects-container {
+  height: 300px; /* Altura deseada del contenedor */
+  overflow-y: scroll; /* Habilitar scroll vertical */
+  padding: 20px; /* Espaciado interior */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.25rem;
+  background-color: v.$gris;
+  border-radius: 0.25rem;
+  text-align: center;
+  
+  &.hidden {
     display: none;
-    height: 300px; /* Altura deseada del contenedor */
-    overflow-y: scroll; /* Habilitar scroll vertical */
-    padding: 20px; /* Espaciado interior */
-    background-color: #f1f1f1; /* Color de fondo */
   }
+}
+
+
+.miniproyectsCanva {
+  width: 480px;
+  height: 320px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+#breakoutCanvas {
+  width: 480px; 
+  height: 320px;
+}
+
   
