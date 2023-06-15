@@ -1,0 +1,2 @@
+document.getElementById("numberForm").addEventListener("submit",(function(e){e.preventDefault();var t=document.getElementById("number").value,n=new XMLHttpRequest;n.open("POST","http://localhost:5000/convert",!0),n.setRequestHeader("Content-Type","application/json"),n.onreadystatechange=function(){if(4===n.readyState&&200===n.status){var e=JSON.parse(n.responseText);document.getElementById("resultText").textContent=e.result}};var r=JSON.stringify({number:t});n.send(r)}));
+//# sourceMappingURL=numbersToWords.js.map

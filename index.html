@@ -129,21 +129,58 @@
             <div id="infiniteScrollContainer"></div>
           </div>  <!--Termina IntiniteScroll Display-->
           
-          <div id="breakOut" class="project-content">
+          <div id="breakOut" class="project-content ">
             <button class="boton-amarillo-block" onclick="startBreakoutGame('breakoutCanvas')">Iniciar Juego</button>
-            <div id="miniproyectsCanva">
-                <canvas id="breakoutCanvas"></canvas>
+            <div>
+                <canvas id="breakoutCanvas" class="hidden"></canvas>
             </div>
           </div> <!--Termina BreackOut Display-->
-
-        </div>
+        </div> <!--Termina Miniproyects display js-->
     </section> <!-- Termina Seccion miniproyectos -->
       
 
 
     <section class="seccion contenedor">
-        <h2>Proyectos Python</h2>
+      <h2>Proyectos Python</h2>
+  
+          <div class="contenedor-proyectos">
+            <div class="proyecto">
+              <div class="contenido-proyecto">
+                  <p class="lenguage-type">Número a Palabras</p>
+                  <button class="boton-amarillo-block" onclick="toggleProject('NumberToWords'); changeProject('NumberToWords');">
+                      Ver Proyecto
+                  </button>              
+              </div><!--.contenido-proyecto--->
+            </div> <!--proyecto-->
 
+            <div class="proyecto">
+              <div class="contenido-proyecto">
+                  <p class="lenguage-type">Web Scrape</p>
+                  <button class="boton-amarillo-block" onclick="toggleProject('webScrape'); changeProject('webScrape');">
+                      Ver Proyecto
+                  </button>              
+              </div><!--.contenido-proyecto--->
+            </div> <!--proyecto-->
+
+
+
+          </div><!-- Contenedor-proyectos-->
+  
+          <div id="miniproyectsPY" class="miniproyects-container">
+            <div id="numberToW" class="project-content">
+              <h2>Convertir número a palabras</h2>
+              <form id="numberForm">
+                <label>Ingresa un número: <input type="number" id="number" name="number"></label>
+                <button type="submit">Convertir</button>
+              </form>
+              <div id="result">
+                <h2>Resultado:</h2>
+                <p id="resultText"></p>
+              </div>
+            </div>
+          </div>
+                        
+  </section>  
 
     <footer class="footer-expand-lg bg-body-tertiary">
         <div class="container-fluid text-center py-3">
@@ -163,8 +200,7 @@
     <script src="public/build/js/proyectsjs/incoms.js"></script>
     <script src="public/build/js/proyectsjs/translate.js"></script>
     <script src="public/build/js/proyectsjs/breackOut.js"></script>
-
-
+    <script src="public/build/js/python/numbersToWords.js"></script>
 
 
 </body>
