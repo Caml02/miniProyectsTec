@@ -52,8 +52,41 @@ function navegacionResponsive() {
 
 var activeProject = null;
 
-function toggleProject(projectId) {
+function toggleProjectJS(projectId) {
   var miniproyectsContainer = document.getElementById('miniproyects');
+  var project = document.getElementById(projectId);
+
+  if (activeProject !== null) {
+    var activeProjectElement = document.getElementById(activeProject);
+    activeProjectElement.classList.add('hidden');
+  }
+
+  if (activeProject === projectId) {
+    miniproyectsContainer.classList.add('hidden');
+    activeProject = null;
+  } else {
+    project.classList.remove('hidden');
+    miniproyectsContainer.classList.remove('hidden');
+    activeProject = projectId;
+  }
+}
+
+function changeProject(projectId) {
+  var projects = document.getElementsByClassName('project-content');
+  for (var i = 0; i < projects.length; i++) {
+    projects[i].style.display = 'none';
+  }
+
+  var project = document.getElementById(projectId);
+  project.style.display = 'block';
+}
+
+
+// Miniproyects Python 
+
+function toggleProjectPY(projectId) {
+
+  var miniproyectsContainer = document.getElementById('miniproyectsPY');
   var project = document.getElementById(projectId);
 
   if (activeProject !== null) {

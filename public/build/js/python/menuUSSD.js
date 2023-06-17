@@ -1,0 +1,2 @@
+document.getElementById("menuForm").addEventListener("submit",(function(e){e.preventDefault();var t=document.getElementById("option").value,n=new XMLHttpRequest;n.open("POST","http://localhost:5000/menu",!0),n.setRequestHeader("Content-Type","application/json"),n.onreadystatechange=function(){if(4===n.readyState&&200===n.status){var e=JSON.parse(n.responseText);document.getElementById("message").textContent=e.message}};var a=JSON.stringify({option:t});n.send(a)}));
+//# sourceMappingURL=menuUSSD.js.map

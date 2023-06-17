@@ -1,2 +1,2 @@
-
+document.getElementById("webScrapeForm").addEventListener("submit",(function(e){e.preventDefault();var t=document.getElementById("url").value,n=new XMLHttpRequest;n.open("POST","http://localhost:5000/web_scraping",!0),n.setRequestHeader("Content-Type","application/json"),n.onreadystatechange=function(){if(4===n.readyState&&200===n.status){var e=JSON.parse(n.responseText);e.error?alert("Error: "+e.error):(document.getElementById("pageTitle").textContent=e.title,document.getElementById("metaDescription").textContent=e.description,document.getElementById("internalLinks").textContent=e.links)}};var r=JSON.stringify({url:t});n.send(r)}));
 //# sourceMappingURL=webScrape.js.map

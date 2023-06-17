@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiniProyects</title>
     <link rel="stylesheet" href="public/build/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 </head>
 <body>
@@ -46,7 +47,7 @@
             </div>
             <div class="contenido-proyecto">
               <p class="lenguage-type">Suma de Ingresos</p>
-              <button class="boton-amarillo-block" onclick="toggleProject('incoms'); changeProject('incoms');">
+              <button class="boton-amarillo-block" onclick="toggleProjectJS('incoms'); changeProject('incoms');">
                 Ver Proyecto
               </button>              
             </div><!--.contenido-proyecto--->
@@ -55,7 +56,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Cuenta regresiva</p>
-              <button class="boton-amarillo-block" onclick="toggleProject('countDown'); changeProject('countDown');">
+              <button class="boton-amarillo-block" onclick="toggleProjectJS('countDown'); changeProject('countDown');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -64,7 +65,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Scroll Infinito</p>
-              <button class="boton-amarillo-block" onclick="toggleProject('infiniteScroll') ; changeProject('infiniteScroll');">
+              <button class="boton-amarillo-block" onclick="toggleProjectJS('infiniteScroll') ; changeProject('infiniteScroll');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -73,7 +74,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Traductor</p>
-              <button class="boton-amarillo-block" onclick="toggleProject('speechToText'); changeProject('speechToText');">
+              <button class="boton-amarillo-block" onclick="toggleProjectJS('speechToText'); changeProject('speechToText');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -82,7 +83,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Juego BreackOut</p>
-              <button class="boton-amarillo-block" onclick="toggleProject('breakOut'); changeProject('breakOut');">
+              <button class="boton-amarillo-block" onclick="toggleProjectJS('breakOut'); changeProject('breakOut');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -147,7 +148,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Número a Palabras</p>
-                  <button class="boton-amarillo-block" onclick="toggleProject('NumberToWords'); changeProject('NumberToWords');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('NumberToWords'); changeProject('NumberToWords');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -156,18 +157,42 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Web Scrape</p>
-                  <button class="boton-amarillo-block" onclick="toggleProject('webScrape'); changeProject('webScrape');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('webScrape'); changeProject('webScrape');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
             </div> <!--proyecto-->
 
+            <div class="proyecto">
+              <div class="contenido-proyecto">
+                  <p class="lenguage-type">Menu USSD</p>
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('ussd'); changeProject('ussd');">
+                      Ver Proyecto
+                  </button>              
+              </div><!--.contenido-proyecto--->
+            </div> <!--proyecto-->
 
+            <div class="proyecto">
+              <div class="contenido-proyecto">
+                  <p class="lenguage-type">Peliculas Top</p>
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('movieRating'); changeProject('movieRating');">
+                      Ver Proyecto
+                  </button>              
+              </div><!--.contenido-proyecto--->
+            </div> <!--proyecto-->
 
-          </div><!-- Contenedor-proyectos-->
+            <div class="proyecto">
+              <div class="contenido-proyecto">
+                  <p class="lenguage-type">Ahorcado</p>
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('hangMan'); changeProject('hangMan');">
+                      Ver Proyecto
+                  </button>              
+              </div><!--.contenido-proyecto--->
+            </div> <!--proyecto-->
+          </div><!-- Contenedor-proyectos Python-->
   
-          <div id="miniproyectsPY" class="miniproyects-container">
-            <div id="numberToW" class="project-content">
+          <div id="miniproyectsPY" class="miniproyects-container hidden">
+            <div id="NumberToWords" class="project-content">
               <h2>Convertir número a palabras</h2>
               <form id="numberForm">
                 <label>Ingresa un número: <input type="number" id="number" name="number"></label>
@@ -177,10 +202,68 @@
                 <h2>Resultado:</h2>
                 <p id="resultText"></p>
               </div>
+            </div> <!--Termina proyecto NumberToWord-->
+
+            <div id="webScrape" class="project-content">
+              <h2>Web Scraping</h2>
+              <form id="webScrapeForm">
+                <label>Ingresa una URL: <input type="text" id="url" name="url"></label>
+                <button type="submit">Scrapear</button>
+              </form>
+              <div id="webScrapeResult">
+                <h2>Resultado:</h2>
+                <div>
+                  <h3>Título:</h3>
+                  <p id="pageTitle"></p>
+                </div>
+                <div>
+                  <h3>Descripción:</h3>
+                  <p id="metaDescription"></p>
+                </div>
+                <div>
+                  <h3>Enlaces internos:</h3>
+                  <ul id="internalLinks"></ul>
+                </div>
+              </div>
+            </div> <!--Termina proyecto Web Scrapping-->
+
+            <div id="ussd" class="project-content">
+              <h2>Menú Telefónico (USSD)</h2>
+              <form id="menuForm">
+                  <label>Selecciona una opción:
+                      <select id="option" name="option">
+                          <option value="1">Consultar saldo</option>
+                          <option value="2">Transferir dinero</option>
+                          <option value="3">Pagar Factura</option>
+                      </select>
+                  </label>
+                  <button type="submit">Enviar</button>
+              </form>
+              <div id="message">
+                  <h2>Respuesta:</h2>
+              </div>
+          </div> <!-- #ussd -->
+
+          <div id="movieRating" class="project-content">
+            <h2>Rating de Películas</h2>
+            <div class="movie-rating">
+              <div class="rating-stars">
+                <span class="star" onclick="setRating(1)"><i class="fas fa-star"></i></span>
+                <span class="star" onclick="setRating(2)"><i class="fas fa-star"></i></span>
+                <span class="star" onclick="setRating(3)"><i class="fas fa-star"></i></span>
+                <span class="star" onclick="setRating(4)"><i class="fas fa-star"></i></span>
+                <span class="star" onclick="setRating(5)"><i class="fas fa-star"></i></span>
+              </div>
+              <p class="rating-label">Tu calificación: <span id="selectedRating">-</span></p>
             </div>
-          </div>
-                        
-  </section>  
+            <textarea id="comments" placeholder="Escribe tus comentarios"></textarea>
+            <button onclick="submitRating()">Enviar</button>
+          </div> <!--Termina topMovies-->
+            
+            
+
+          </div> <!--Termina contenedor miniproyectos Python-->
+  </section>  <!--Termina sección miniproyectos Python-->
 
     <footer class="footer-expand-lg bg-body-tertiary">
         <div class="container-fluid text-center py-3">
@@ -201,7 +284,11 @@
     <script src="public/build/js/proyectsjs/translate.js"></script>
     <script src="public/build/js/proyectsjs/breackOut.js"></script>
     <script src="public/build/js/python/numbersToWords.js"></script>
+    <script src="public/build/js/python/webScrape.js"></script>
+    <script src="public/build/js/python/menuUSSD.js"></script>
+    <script src="public/build/js/python/topMovies.js"></script>
 
+    
 
 </body>
 </html>
