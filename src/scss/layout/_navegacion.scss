@@ -52,6 +52,7 @@
         align-items: center;
         opacity: 1;
         visibility: visible;
+        
     }
     
     a {
@@ -68,6 +69,9 @@
             &:last-of-type {
                 margin-right: 0;
             }
+        }
+        &:hover {
+            color: v.$Naranja;
         }
     }
 }

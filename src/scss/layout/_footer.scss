@@ -3,13 +3,30 @@
 
 
 
-
 .footer {
+    padding: v.$separacion / 2 0 ;
     background-color: v.$grisOscuro;
+    margin-bottom: 0;
+
+    .contenedor-footer {
+        padding-top: v.$separacion / 2;
+    }
 
     .copyright {
         color: v.$blanco;
         text-align: center;
     }
+    .icons {
+        text-decoration: none;
+    }
+    p {
+        color: v.$blanco;
+    }
+    .icons {
+        color: v.$Naranja;
+    }
 }
+
+
+
 

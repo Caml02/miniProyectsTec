@@ -7,6 +7,8 @@
     <title>MiniProyects</title>
     <link rel="stylesheet" href="public/build/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+
 
 </head>
 <body>
@@ -42,9 +44,6 @@
       
         <div class="contenedor-proyectos">
           <div class="proyecto">
-            <div class="js-icons">
-              <img loading="lazy" src="src/img/incoms.svg" alt="Incoms-icon">
-            </div>
             <div class="contenido-proyecto">
               <p class="lenguage-type">Suma de Ingresos</p>
               <button class="boton-amarillo-block" onclick="toggleProjectJS('incoms'); changeProject('incoms');">
@@ -148,7 +147,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Número a Palabras</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('NumberToWords'); changeProject('NumberToWords');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('NumberToWords'); changeProjectPY('NumberToWords');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -157,7 +156,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Web Scrape</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('webScrape'); changeProject('webScrape');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('webScrape'); changeProjectPY('webScrape');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -166,7 +165,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Menu USSD</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('ussd'); changeProject('ussd');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('ussd'); changeProjectPY('ussd');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -175,7 +174,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Peliculas Top</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('movieRating'); changeProject('movieRating');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('movieRating'); changeProjectPY('movieRating');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -184,7 +183,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Ahorcado</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('hangMan'); changeProject('hangMan');">
+                  <button class="boton-amarillo-block" onclick="toggleProjectPY('hangMan'); changeProjectPY('hangMan');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -192,7 +191,7 @@
           </div><!-- Contenedor-proyectos Python-->
   
           <div id="miniproyectsPY" class="miniproyects-container hidden">
-            <div id="NumberToWords" class="project-content">
+            <div id="NumberToWords" class="project-contentPY">
               <h2>Convertir número a palabras</h2>
               <form id="numberForm">
                 <label>Ingresa un número: <input type="number" id="number" name="number"></label>
@@ -204,7 +203,7 @@
               </div>
             </div> <!--Termina proyecto NumberToWord-->
 
-            <div id="webScrape" class="project-content">
+            <div id="webScrape" class="project-contentPY">
               <h2>Web Scraping</h2>
               <form id="webScrapeForm">
                 <label>Ingresa una URL: <input type="text" id="url" name="url"></label>
@@ -227,7 +226,7 @@
               </div>
             </div> <!--Termina proyecto Web Scrapping-->
 
-            <div id="ussd" class="project-content">
+            <div id="ussd" class="project-contentPY">
               <h2>Menú Telefónico (USSD)</h2>
               <form id="menuForm">
                   <label>Selecciona una opción:
@@ -244,7 +243,7 @@
               </div>
           </div> <!-- #ussd -->
 
-          <div id="movieRating" class="project-content">
+          <div id="movieRating" class="project-contentPY">
             <h2>Rating de Películas</h2>
             <div class="movie-rating">
               <div class="rating-stars">
@@ -259,22 +258,29 @@
             <textarea id="comments" placeholder="Escribe tus comentarios"></textarea>
             <button onclick="submitRating()">Enviar</button>
           </div> <!--Termina topMovies-->
-            
-            
+
+          <div id="hangMan" class="project-contentPY">
+            <p id="message">Adivina la palabra</p>
+            <p id="guessedLetters">Letras adivinadas: </p>
+            <p id="remainingAttempts">Intentos restantes: </p>
+            <form id="guessForm">
+              <label for="letterInput">Ingresa una letra:</label>
+              <input type="text" id="letterInput" maxlength="1" required>
+              <button type="submit">Adivinar</button>
+            </form>
+          </div> <!--Termina HangMan-->
 
           </div> <!--Termina contenedor miniproyectos Python-->
   </section>  <!--Termina sección miniproyectos Python-->
 
-    <footer class="footer-expand-lg bg-body-tertiary">
-        <div class="container-fluid text-center py-3">
-          <div class="row">
-              <p>2023 © Todos los derechos reservados a Cristian Morales | 
-              <a href="https://github.com/caml02/" target="_blank"><i class="fa-brands fa-github fa-xs"></i> </a>
-              <a href="https://www.linkedin.com/in/cristian-morales-87311b18a/" target="_blank"><i class="fa-brands fa-linkedin fa-xs"></i></a>        
-              </p> 
-          </div>
+    <footer class="footer seccion">
+        <div class="contenedor contenedor-footer">
+          <p>2023 © Todos los derechos reservados a Cristian Morales | 
+            <a href="https://github.com/caml02/" target="_blank"><i class="icons fab fa-github"></i></a>  
+            <a href="https://www.linkedin.com/in/cristian-morales-87311b18a/" target="_blank"><i class="icons fab fa-linkedin"></i></a>       
+            </p> 
         </div>
-      </footer>
+    </footer>
 
 
     <script src="public/build/js/app.js"></script>
@@ -287,6 +293,8 @@
     <script src="public/build/js/python/webScrape.js"></script>
     <script src="public/build/js/python/menuUSSD.js"></script>
     <script src="public/build/js/python/topMovies.js"></script>
+    <script src="public/build/js/python/hangMan.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     
 

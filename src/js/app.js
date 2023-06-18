@@ -104,8 +104,8 @@ function toggleProjectPY(projectId) {
   }
 }
 
-function changeProject(projectId) {
-  var projects = document.getElementsByClassName('project-content');
+function changeProjectPY(projectId) {
+  var projects = document.getElementsByClassName('project-contentPY');
   for (var i = 0; i < projects.length; i++) {
     projects[i].style.display = 'none';
   }

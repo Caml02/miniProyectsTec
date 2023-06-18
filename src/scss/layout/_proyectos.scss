@@ -6,7 +6,7 @@
 
 @include m.tablet {
     .contenedor-proyectos {
-        @include m.grid(3, 2rem);
+        @include m.grid(5, 2rem);
     }
 }
 
@@ -25,7 +25,7 @@
  
 }
 .lenguage-type {
-    color: v.$verde;
+    color: v.$amarillo;
     font-weight: v.$bold;
     font-size: 3rem;
 }
@@ -47,19 +47,6 @@
         p {
             font-weight: v.$black;
         }
-    }
-}
-
-       
-.js-icons {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    
-    img {
-        width: 15rem; 
-        height: 15rem;
-        margin: 1rem; 
     }
 }
 
