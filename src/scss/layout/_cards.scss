@@ -1,5 +1,6 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
+@use '../base/darkMode' as d;
 
 .miniproyects-container {
   height: 300px; /* Altura deseada del contenedor */
@@ -10,6 +11,11 @@
   background-color: v.$gris;
   border-radius: 0.25rem;
   text-align: center;
+
+  d.dark-mode {
+    background-color: darken(v.$grisOscuro, 10);
+    color: v.$blanco;
+  }
   
   &.hidden {
     display: none;

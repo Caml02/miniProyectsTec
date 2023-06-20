@@ -40,13 +40,12 @@
     </header>
 
     <section class="seccion contenedor">
-        <h2>Proyectos JavaScript</h2>
-      
+        <h2>Proyectos JavaScript</h2> 
         <div class="contenedor-proyectos">
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Suma de Ingresos</p>
-              <button class="boton-amarillo-block" onclick="toggleProjectJS('incoms'); changeProject('incoms');">
+              <button class="button-javascript" onclick="toggleProjectJS('incoms'); changeProject('incoms');">
                 Ver Proyecto
               </button>              
             </div><!--.contenido-proyecto--->
@@ -55,7 +54,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Cuenta regresiva</p>
-              <button class="boton-amarillo-block" onclick="toggleProjectJS('countDown'); changeProject('countDown');">
+              <button class="button-javascript" onclick="toggleProjectJS('countDown'); changeProject('countDown');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -64,7 +63,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Scroll Infinito</p>
-              <button class="boton-amarillo-block" onclick="toggleProjectJS('infiniteScroll') ; changeProject('infiniteScroll');">
+              <button class="button-javascript" onclick="toggleProjectJS('infiniteScroll') ; changeProject('infiniteScroll');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -73,7 +72,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Traductor</p>
-              <button class="boton-amarillo-block" onclick="toggleProjectJS('speechToText'); changeProject('speechToText');">
+              <button class="button-javascript" onclick="toggleProjectJS('speechToText'); changeProject('speechToText');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -82,7 +81,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Juego BreackOut</p>
-              <button class="boton-amarillo-block" onclick="toggleProjectJS('breakOut'); changeProject('breakOut');">
+              <button class="button-javascript" onclick="toggleProjectJS('breakOut'); changeProject('breakOut');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -99,7 +98,7 @@
                   <label for="incomeDescription">Descripción del ingreso:</label>
                   <input type="text" id="incomeDescription" required>
               
-                  <button type="submit">Agregar ingreso</button>
+                  <button class="button-javascript" type="submit">Agregar ingreso</button>
                 </form>
               
                 <div id="incomeList">
@@ -121,7 +120,7 @@
             <button id="startButton" class="boton-amarillo-block">Iniciar</button>
             <button id="stopButton" class="boton-amarillo-block">Detener</button>
             <p id="transcription"></p>
-            <button id="clearButton">Borrar Transcripción</button>
+            <button class="button-javascript" id="clearButton">Borrar Transcripción</button>
           </div>
                     
           <div id="infiniteScroll" class="project-content">
@@ -130,7 +129,7 @@
           </div>  <!--Termina IntiniteScroll Display-->
           
           <div id="breakOut" class="project-content ">
-            <button class="boton-amarillo-block" onclick="startBreakoutGame('breakoutCanvas')">Iniciar Juego</button>
+            <button class="button-javascript" onclick="startBreakoutGame('breakoutCanvas')">Iniciar Juego</button>
             <div>
                 <canvas id="breakoutCanvas" class="hidden"></canvas>
             </div>
@@ -273,6 +272,27 @@
           </div> <!--Termina contenedor miniproyectos Python-->
   </section>  <!--Termina sección miniproyectos Python-->
 
+
+  <!--Paint Cursor-->
+    <h2> Paint your mind </h2>
+    <div class="paint-container">
+      <div id="canvasContainer">
+        <div id="canvasCursor">
+          <canvas></canvas>
+        </div>
+      </div>
+      <div>
+        <input type="color" id="color-picker" value="#000000">
+        <select id="brush-size">
+          <option value="1">Pequeño</option>
+          <option value="5">Mediano</option>
+          <option value="10">Grande</option>
+        </select>
+        <button id="capture-btn">Tomar Captura</button>
+        <button id="clear-btn">Borrar</button>
+      </div>
+    </div>
+
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
           <p>2023 © Todos los derechos reservados a Cristian Morales | 
@@ -284,17 +304,18 @@
 
 
     <script src="public/build/js/app.js"></script>
-    <script src="public/build/js/proyectsjs/countdown.js"></script>
-    <script src="public/build/js/proyectsjs/infiniteScroll.js"></script>
-    <script src="public/build/js/proyectsjs/incoms.js"></script>
-    <script src="public/build/js/proyectsjs/translate.js"></script>
-    <script src="public/build/js/proyectsjs/breackOut.js"></script>
+    <script src="public/build/js/projectsjs/countdown.js"></script>
+    <script src="public/build/js/projectsjs/infiniteScroll.js"></script>
+    <script src="public/build/js/projectsjs/incoms.js"></script>
+    <script src="public/build/js/projectsjs/translate.js"></script>
+    <script src="public/build/js/projectsjs/breackOut.js"></script>
     <script src="public/build/js/python/numbersToWords.js"></script>
     <script src="public/build/js/python/webScrape.js"></script>
     <script src="public/build/js/python/menuUSSD.js"></script>
     <script src="public/build/js/python/topMovies.js"></script>
     <script src="public/build/js/python/hangMan.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="public/build/js/paintCursor.js"></script>
+
 
     
 

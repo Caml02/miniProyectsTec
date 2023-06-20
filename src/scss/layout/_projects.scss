@@ -1,0 +1,65 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+@include m.tablet {
+  .contenedor-proyectos {
+    @include m.grid(5, 2rem);
+  }
+}
+
+
+.proyecto {
+  border: 1px solid darken(v.$gris, 10);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 30px -12px rgb(32, 32, 32);
+  cursor: pointer;
+
+
+  .contenido-proyecto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+
+  .lenguage-type {
+    font-weight: v.$bold;
+    font-size: 3rem;
+    margin-top: 0;
+  }
+
+}
+
+.lenguage-icon {
+    transform: translate(0, -1.5rem);
+    transition: transform 500ms ease-in-out;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: v.$javaScript; /* Color de JavaScript */
+    background-color: v.$negro;
+
+}
+
+// Buttons / botones 
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffa500;
+    }
+
+}
+
+.button-javascript {
+    background-color: v.$javaScript;
+    margin-top: auto;
+  }
+  

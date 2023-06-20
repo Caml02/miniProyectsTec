@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     eventListeners();
     toggleProject();
     changeProject();
-    
+    toggleProjectPY();
+    changeProjectPY();
+        
 });
 
 
@@ -48,7 +50,7 @@ function navegacionResponsive() {
     navegacion.classList.toggle('mostrar')
 }
 
-/**Miniproyects-container  JS **/
+/**Miniprojects-container  JS **/
 
 var activeProject = null;
 
