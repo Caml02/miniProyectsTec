@@ -46,6 +46,9 @@ function startBreakoutGame(canvasId) {
   document.getElementById("breakOut").style.display = "block";
   canvas.style.display = "block";
 
+  canvas.width = brickColumnCount * (brickWidth + brickPadding) + brickOffsetLeft * 2;
+  canvas.height = brickRowCount * (brickHeight + brickPadding) + brickOffsetTop + 30;
+
   // Event listeners para detectar las teclas presionadas
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);

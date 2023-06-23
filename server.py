@@ -77,10 +77,16 @@ def get_ratings():
 
 # HangMan Game
 
+
 words = ["PYTHON", "JAVASCRIPT", "HTML", "CSS", "JAVA", "RUBY", "PHP"]
-word = random.choice(words)
-guessed_letters = []
 max_attempts = 5
+
+def initialize_game():
+    word = random.choice(words)
+    guessed_letters = []
+    return word, guessed_letters
+
+word, guessed_letters = initialize_game()
 
 @app.route('/get_word', methods=['GET'])
 def get_word():
@@ -88,6 +94,8 @@ def get_word():
 
 @app.route('/guess', methods=['POST'])
 def guess_letter():
+    global word, guessed_letters
+
     data = request.get_json()
     letter = data["letter"].upper()
 
@@ -109,6 +117,13 @@ def guess_letter():
         response["game_over"] = True
 
     return jsonify(response)
+
+@app.route('/restart', methods=['POST'])
+def restart_game():
+    global word, guessed_letters
+    word, guessed_letters = initialize_game()
+    return jsonify({"message": "Juego reiniciado correctamente."})
+
 
 
 if __name__ == '__main__':

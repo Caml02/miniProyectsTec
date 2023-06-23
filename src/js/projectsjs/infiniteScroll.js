@@ -1,51 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-  toggleScroll();
-  startScrollInfinito();
-});
-
-function toggleScroll() {
-  var toggleScrollContainer = document.getElementById("infiniteScroll");
-  toggleScrollContainer.classList.toggle("hidden");
-}
-
-function startScrollInfinito() {
-  var scrollContainer = document.getElementById("infiniteScrollContainer");
-  var miniproyectsContainer = document.getElementById("miniproyects");
   var isLoading = false;
   var pageNumber = 1;
+  var container = document.getElementById('infiniteScrollContainer');
+  var threshold = 200; // Píxeles antes del final del contenido para cargar más elementos
 
+  // Función para cargar más contenido
   function loadMoreContent() {
-    if (isLoading) {
-      return;
+    if (!isLoading) {
+      isLoading = true;
+      var loader = document.createElement('div');
+      loader.classList.add('loader');
+      container.appendChild(loader);
+
+      // Simular una solicitud de contenido
+      setTimeout(function() {
+        for (var i = 1; i <= 10; i++) {
+          var item = document.createElement('p');
+          item.textContent = 'Elemento ' + ((pageNumber - 1) * 10 + i);
+          container.appendChild(item);
+        }
+
+        isLoading = false;
+        pageNumber++;
+        container.removeChild(loader);
+      }, 1000);
     }
-
-    isLoading = true;
-
-    setTimeout(function() {
-      var newContent = "<p>Nuevo contenido cargado en la página " + pageNumber + "</p>";
-      scrollContainer.innerHTML += newContent;
-
-      pageNumber++;
-      isLoading = false;
-    }, 1000);
   }
 
-  function isElementAtBottom() {
-    var miniproyectsRect = miniproyectsContainer.getBoundingClientRect();
-    var scrollContainerRect = scrollContainer.getBoundingClientRect();
-    var scrollContainerBottom = scrollContainerRect.top + scrollContainerRect.height;
-    var miniproyectsBottom = miniproyectsRect.top + miniproyectsRect.height;
+  // Función para verificar si se debe cargar más contenido al hacer scroll
+  function checkScroll() {
+    var scrollPosition = window.innerHeight + window.pageYOffset;
+    var contentHeight = container.offsetHeight;
 
-    return scrollContainerBottom >= miniproyectsBottom;
-  }
-
-  function handleScroll() {
-    if (isElementAtBottom()) {
+    if (scrollPosition > contentHeight - threshold) {
       loadMoreContent();
     }
   }
 
-  window.addEventListener("scroll", handleScroll);
+  // Agregar el evento de scroll para cargar más contenido
+  window.addEventListener('scroll', checkScroll);
 
-  handleScroll();
-}
+  // Cargar contenido inicial
+  loadMoreContent();
+});

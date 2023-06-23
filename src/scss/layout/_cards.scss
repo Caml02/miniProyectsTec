@@ -2,7 +2,7 @@
 @use '../base/mixins' as m;
 @use '../base/darkMode' as d;
 
-.miniproyects-container {
+.miniprojects-container {
   height: 300px; /* Altura deseada del contenedor */
   overflow-y: scroll; /* Habilitar scroll vertical */
   padding: 20px; /* Espaciado interior */

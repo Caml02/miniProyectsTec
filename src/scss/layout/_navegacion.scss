@@ -34,10 +34,16 @@
     flex-direction: column;
     padding-top: 3rem;
 
+    img {
+        width: 5rem;
+        color: v.$blanco;
+    }
+
     @include m.tablet {
         flex-direction: row;
         justify-content: space-between;
     }
+
 }
 .navegacion {
 

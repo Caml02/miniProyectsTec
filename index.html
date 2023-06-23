@@ -7,7 +7,7 @@
     <title>MiniProyects</title>
     <link rel="stylesheet" href="public/build/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
 
 
 </head>
@@ -16,7 +16,7 @@
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="build/img/logo.svg" alt="logo">
+                    <img src="src/img/MC_Logo.svg" alt="logo">
                 </a>
 
                 <div class="mobile-menu">
@@ -26,9 +26,9 @@
                 <div class="right-way">
                     <img class="dark-mode-boton" src="src/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a href="javascriptP.html">JavaScript</a>
-                        <a href="pythonP.html">Python</a>
-                        <a href="finalProyect.html">JS&PY</a>
+                        <a href="#javascriptP">JavaScript</a>
+                        <a href="#pythonP">Python</a>
+                        <a href="#finalProyect">Paint Your mind</a>
                     </nav>
                 </div>
                 
@@ -40,12 +40,12 @@
     </header>
 
     <section class="seccion contenedor">
-        <h2>Proyectos JavaScript</h2> 
+        <h2 id="javascriptP">Proyectos JavaScript</h2> 
         <div class="contenedor-proyectos">
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Suma de Ingresos</p>
-              <button class="button-javascript" onclick="toggleProjectJS('incoms'); changeProject('incoms');">
+              <button class="button-javascript" onclick="toggleProjectJS('incoms'); changeProject('incoms'); scrollToSection('#miniprojects');">
                 Ver Proyecto
               </button>              
             </div><!--.contenido-proyecto--->
@@ -54,7 +54,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Cuenta regresiva</p>
-              <button class="button-javascript" onclick="toggleProjectJS('countDown'); changeProject('countDown');">
+              <button class="button-javascript" onclick="toggleProjectJS('countDown'); changeProject('countDown'); scrollToSection('#miniprojects');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -63,7 +63,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Scroll Infinito</p>
-              <button class="button-javascript" onclick="toggleProjectJS('infiniteScroll') ; changeProject('infiniteScroll');">
+              <button class="button-javascript" onclick="toggleProjectJS('infiniteScroll') ; changeProject('infiniteScroll'); scrollToSection('#miniprojects');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -72,7 +72,7 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Traductor</p>
-              <button class="button-javascript" onclick="toggleProjectJS('speechToText'); changeProject('speechToText');">
+              <button class="button-javascript" onclick="toggleProjectJS('speechToText'); changeProject('speechToText'); scrollToSection('#miniprojects');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
@@ -81,14 +81,14 @@
           <div class="proyecto">
             <div class="contenido-proyecto">
               <p class="lenguage-type">Juego BreackOut</p>
-              <button class="button-javascript" onclick="toggleProjectJS('breakOut'); changeProject('breakOut');">
+              <button class="button-javascript" onclick="toggleProjectJS('breakOut'); changeProject('breakOut'); scrollToSection('#miniprojects');">
                 Ver Proyecto
               </button>
             </div><!--.contenido-proyecto--->
           </div><!--proyecto-->
         </div>
       
-        <div id="miniproyects" class="miniproyects-container hidden">
+        <div id="miniprojects" class="miniprojects-container hidden">
             <div id="incoms" class="project-content">
                 <h3>Suma de Ingresos:</h3>
                 <form id="incomeForm">
@@ -124,7 +124,7 @@
           </div>
                     
           <div id="infiniteScroll" class="project-content">
-            <h3>Scroll Infinito:</h3>
+            <h3>Scroll Infinito</h3>
             <div id="infiniteScrollContainer"></div>
           </div>  <!--Termina IntiniteScroll Display-->
           
@@ -134,19 +134,17 @@
                 <canvas id="breakoutCanvas" class="hidden"></canvas>
             </div>
           </div> <!--Termina BreackOut Display-->
-        </div> <!--Termina Miniproyects display js-->
+        </div> <!--Termina miniprojects display js-->
     </section> <!-- Termina Seccion miniproyectos -->
       
-
-
     <section class="seccion contenedor">
-      <h2>Proyectos Python</h2>
+      <h2 id="pythonP">Proyectos Python</h2>
   
           <div class="contenedor-proyectos">
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Número a Palabras</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('NumberToWords'); changeProjectPY('NumberToWords');">
+                  <button class="button-javascript" onclick="toggleProjectPY('NumberToWords'); changeProjectPY('NumberToWords'); scrollToSection('#miniprojectsPY');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -155,7 +153,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Web Scrape</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('webScrape'); changeProjectPY('webScrape');">
+                  <button class="button-javascript" onclick="toggleProjectPY('webScrape'); changeProjectPY('webScrape'); scrollToSection('#miniprojectsPY');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -164,7 +162,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Menu USSD</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('ussd'); changeProjectPY('ussd');">
+                  <button class="button-javascript" onclick="toggleProjectPY('ussd'); changeProjectPY('ussd'); scrollToSection('#miniprojectsPY');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -173,7 +171,7 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Peliculas Top</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('movieRating'); changeProjectPY('movieRating');">
+                  <button class="button-javascript" onclick="toggleProjectPY('movieRating'); changeProjectPY('movieRating'); scrollToSection('#miniprojectsPY');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
@@ -182,14 +180,14 @@
             <div class="proyecto">
               <div class="contenido-proyecto">
                   <p class="lenguage-type">Ahorcado</p>
-                  <button class="boton-amarillo-block" onclick="toggleProjectPY('hangMan'); changeProjectPY('hangMan');">
+                  <button class="button-javascript" onclick="toggleProjectPY('hangMan'); changeProjectPY('hangMan'); scrollToSection('#miniprojectsPY');">
                       Ver Proyecto
                   </button>              
               </div><!--.contenido-proyecto--->
             </div> <!--proyecto-->
           </div><!-- Contenedor-proyectos Python-->
   
-          <div id="miniproyectsPY" class="miniproyects-container hidden">
+          <div id="miniprojectsPY" class="miniprojects-container hidden">
             <div id="NumberToWords" class="project-contentPY">
               <h2>Convertir número a palabras</h2>
               <form id="numberForm">
@@ -267,6 +265,7 @@
               <input type="text" id="letterInput" maxlength="1" required>
               <button type="submit">Adivinar</button>
             </form>
+            <button id="restartButton">Reiniciar Juego</button>
           </div> <!--Termina HangMan-->
 
           </div> <!--Termina contenedor miniproyectos Python-->
@@ -274,7 +273,7 @@
 
 
   <!--Paint Cursor-->
-    <h2> Paint your mind </h2>
+    <h2 id="finalProyect"> Paint your mind </h2>
     <div class="paint-container">
       <div id="canvasContainer">
         <div id="canvasCursor">

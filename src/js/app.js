@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     darkMode();
     eventListeners();
-    toggleProject();
+    toggleProjectJS();
     changeProject();
     toggleProjectPY();
     changeProjectPY();
@@ -55,7 +55,7 @@ function navegacionResponsive() {
 var activeProject = null;
 
 function toggleProjectJS(projectId) {
-  var miniproyectsContainer = document.getElementById('miniproyects');
+  var miniprojectsContainer = document.getElementById('miniprojects');
   var project = document.getElementById(projectId);
 
   if (activeProject !== null) {
@@ -64,11 +64,11 @@ function toggleProjectJS(projectId) {
   }
 
   if (activeProject === projectId) {
-    miniproyectsContainer.classList.add('hidden');
+    miniprojectsContainer.classList.add('hidden');
     activeProject = null;
   } else {
     project.classList.remove('hidden');
-    miniproyectsContainer.classList.remove('hidden');
+    miniprojectsContainer.classList.remove('hidden');
     activeProject = projectId;
   }
 }
@@ -88,7 +88,7 @@ function changeProject(projectId) {
 
 function toggleProjectPY(projectId) {
 
-  var miniproyectsContainer = document.getElementById('miniproyectsPY');
+  var miniprojectsContainer = document.getElementById('miniprojectsPY');
   var project = document.getElementById(projectId);
 
   if (activeProject !== null) {
@@ -97,11 +97,11 @@ function toggleProjectPY(projectId) {
   }
 
   if (activeProject === projectId) {
-    miniproyectsContainer.classList.add('hidden');
+    miniprojectsContainer.classList.add('hidden');
     activeProject = null;
   } else {
     project.classList.remove('hidden');
-    miniproyectsContainer.classList.remove('hidden');
+    miniprojectsContainer.classList.remove('hidden');
     activeProject = projectId;
   }
 }
@@ -115,3 +115,36 @@ function changeProjectPY(projectId) {
   var project = document.getElementById(projectId);
   project.style.display = 'block';
 }
+
+// Go to ID
+
+document.addEventListener('DOMContentLoaded', function() {
+  var enlaces = document.querySelectorAll('.navegacion a');
+
+  for (var i = 0; i < enlaces.length; i++) {
+    enlaces[i].addEventListener('click', function(event) {
+      event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+
+      var destino = this.getAttribute('href'); // Obtiene el valor del atributo href del enlace
+      var elementoDestino = document.querySelector(destino); // Encuentra el elemento con el ID correspondiente
+
+      if (elementoDestino) {
+        // Desplázate suavemente hacia el elemento usando el método scrollTo
+        window.scrollTo({
+          top: elementoDestino.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+});
+  function scrollToSection(sectionId) {
+    var elementoDestino = document.querySelector(sectionId);
+
+    if (elementoDestino) {
+      window.scrollTo({
+        top: elementoDestino.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }
